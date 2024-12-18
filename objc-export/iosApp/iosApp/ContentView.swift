@@ -1,24 +1,21 @@
 import SwiftUI
-import Shared
+import NicknameShared
 
 struct ContentView: View {
-    @State private var showContent = false
+    @State private var nickname = Nickname.companion.Default
+    
+    let service = NicknameService()
+    
     var body: some View {
         VStack {
-            Button("Click me!") {
-                withAnimation {
-                    showContent = !showContent
-                }
+            Button("Generate username") {
+                nickname = service.generateRandomNickname()
             }
-
-            if showContent {
-                VStack(spacing: 16) {
-                    Image(systemName: "swift")
-                        .font(.system(size: 200))
-                        .foregroundColor(.accentColor)
-                    Text("SwiftUI: \(Greeting().greet())")
-                }
-                .transition(.move(edge: .top).combined(with: .opacity))
+            
+            VStack(spacing: 16) {
+                Spacer()
+                Text(nickname.description()).font(.largeTitle)
+                Spacer()
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)

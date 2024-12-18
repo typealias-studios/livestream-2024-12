@@ -21,6 +21,7 @@ kotlin {
 
     @OptIn(ExperimentalSwiftExportDsl::class)
     swiftExport {
+        
     }
 
     sourceSets {

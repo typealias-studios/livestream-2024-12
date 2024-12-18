@@ -12,6 +12,9 @@ pluginManagement {
         }
         mavenCentral()
         gradlePluginPortal()
+        maven {
+            setUrl("https://maven.pkg.jetbrains.space/kotlin/p/kotlin/dev/")
+        }
     }
 }
 
@@ -25,6 +28,9 @@ dependencyResolutionManagement {
             }
         }
         mavenCentral()
+        maven {
+            setUrl("https://maven.pkg.jetbrains.space/kotlin/p/kotlin/dev/")
+        }
     }
 }
 

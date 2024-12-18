@@ -1,4 +1,4 @@
-package com.daveleeds.swiftexport
+package com.daveleeds.objcexport
 
 class NicknameService {
     fun generateRandomNickname(): Nickname {
